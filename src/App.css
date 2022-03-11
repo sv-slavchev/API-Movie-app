@@ -68,7 +68,9 @@ body {
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   min-height: 350px;
-  background-image: url(https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
+  background-image: url(https://www.penguin.co.uk/content/dam/prh/articles/adults/2021/september/2021_filmdaptations-main-image-1800x1200.jpg);
+  /*background-image: url(https://www.prolifics.co.uk/wp-content/uploads/2021/11/ITManagedServices.jpg);*/
+  /*background-image: url("https://cdn.vox-cdn.com/thumbor/ipkbn5z2BRNzJMBZ93UVo26pX78=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22414721/Streaming_Services_v3.jpg");*/
   background-position: center;
   background-size: cover;
   opacity: 0.5;
