@@ -3,6 +3,7 @@ import NavMenu from './NavMenu';
 import Header from './Header';
 import Home from './Home';
 import Main from './Main';
+import MovieDetails from './MovieDetails';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieList from "./components/MovieList";
@@ -64,13 +65,13 @@ const App = () => {
         <Header />
 
         <Main />
-
+        
         <div className="movies row">
           <div className="d-flex">
             <MovieList
               movies={movies}
               handleFavouritesClick={AddFavouriteMovie}
-              favoutiteComponent={AddFavourites}
+              favouriteComponent={AddFavourites}
             />
           </div>
         </div>
@@ -84,7 +85,7 @@ const App = () => {
                     <MovieList
                       movies={favourites}
                       handleFavouritesClick={removeFavouriteMovie}
-                      favoutiteComponent={RemoveFavourite}
+                      favouriteComponent={RemoveFavourite}
                     />
                   </div>
                 </div>*/}
@@ -179,7 +180,7 @@ export default App;
 //             <MovieList
 //               movies={favourites}
 //               handleFavouritesClick={removeFavouriteMovie}
-//               favoutiteComponent={RemoveFavourite}
+//               favouriteComponent={RemoveFavourite}
 //             />
 //           </div>
 //         </div>

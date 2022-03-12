@@ -1,14 +1,15 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddFavourites = () => {
   return (
     <>
-      <span className="mr-2">Add to Favourites</span>
+      <h6>Add to Favourites</h6>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="2em"
-        height="2em"
+        width="1.5em"
+        height="1.5em"
         fill="red"
         class="bi bi-heart-fill"
         viewBox="0 0 16 16"

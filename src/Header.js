@@ -3,6 +3,7 @@ import NavMenu from "./NavMenu";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import Home from './Home';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -27,7 +28,11 @@ const Header = () => {
 	return(
 		<>
 			<div className="container-fluid d-flex align-items-center justify-content-between my-4">
-				<div><MovieListHeading heading="Movies App" /></div>
+				<div>
+					<Link to='/'>
+						<MovieListHeading heading="Movies App" />
+					</Link>
+				</div>
 
 				<div><NavMenu /></div>
 

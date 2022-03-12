@@ -6,15 +6,17 @@ import HeroSection from './HeroSection';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieList from "./components/MovieList";
+import MovieDetails from "./MovieDetails";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import AddFavourites from "./components/AddFavourites";
 import RemoveFavourite from "./components/RemoveFavourites";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  {/*const [movies, setMovies] = useState([]);*/}
+  {/*const [movies, setMovies] = useState([]);*/ }
   const [favourites, setFavourites] = useState([]);
-  {/*const [searchValue, setSearchValue] = useState('');*/}
+  {/*const [searchValue, setSearchValue] = useState('');*/ }
 
   {/*const getMovieRequest = async (searchValue) => {
       const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=d3974e11`;
@@ -73,7 +75,7 @@ const Home = () => {
             <MovieList
               movies={movies}
               handleFavouritesClick={AddFavouriteMovie}
-              favoutiteComponent={AddFavourites}
+              favouriteComponent={AddFavourites}
             />
           </div>
         </div>*/}
@@ -82,13 +84,16 @@ const Home = () => {
           <MovieListHeading heading="Favourites" />
         </div>
 
-        <div className="movies d-flex justify-content-center py-3">
+        <Link to="../movies/movie-details">
+          <div className="movies d-flex justify-content-center py-3">
+
             <MovieList
               movies={favourites}
               handleFavouritesClick={removeFavouriteMovie}
-              favoutiteComponent={RemoveFavourite}
+              favouriteComponent={RemoveFavourite}
             />
-        </div>
+          </div>
+        </Link>
       </div>
     </>
   );

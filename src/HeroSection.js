@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => (
   <div class="hero-section d-sm-flex align-items-center justify-content-between w-100">
@@ -7,7 +8,7 @@ const HeroSection = () => (
 
       <p class="text-secondary text-uppercase">Subheadline</p>
 
-      <a href="#" class="btn px-5 py-3 text-white mt-3 mt-sm-0">Search</a>
+      <Link to="search">Search</Link>
     </div>
 
     <div class="col-md-8 h-100 clipped"></div>

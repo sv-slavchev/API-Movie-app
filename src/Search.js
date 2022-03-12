@@ -1,7 +1,8 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
-import NavMenu from './NavMenu'
-import Main from './Main'
+import NavMenu from './NavMenu';
+import Main from './Main';
+import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieList from "./components/MovieList";
@@ -65,14 +66,16 @@ const Home = () => {
           setSearchValue={setSearchValue}
         />
 
-        <div className="movies container d-flex justify-content-center py-3">
-          
-            <MovieList
-              movies={movies}
-              handleFavouritesClick={AddFavouriteMovie}
-              favoutiteComponent={AddFavourites}
-            />
-        </div>
+        <Link to="../movies/movie-details">
+          <div className="movies container-fluid d-flex justify-content-center py-3">
+            
+              <MovieList
+                movies={movies}
+                handleFavouritesClick={AddFavouriteMovie}
+                favouriteComponent={AddFavourites}
+              />
+          </div>
+        </Link>
 
         {/*<div className="row d-flex align-items-center my-4">
           <MovieListHeading heading="Favourites" />
@@ -83,7 +86,7 @@ const Home = () => {
             <MovieList
               movies={favourites}
               handleFavouritesClick={removeFavouriteMovie}
-              favoutiteComponent={RemoveFavourite}
+              favouriteComponent={RemoveFavourite}
             />
           </div>
         </div>*/}

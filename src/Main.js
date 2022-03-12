@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 import Search from "./Search";
+import MovieDetails from './MovieDetails';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -13,6 +14,7 @@ const Main = () => (
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/search" element={<Search/>} />
+      <Route path="/movies/movie-details" element={<MovieDetails/>} />
     </Routes>
   </main>
 );

@@ -3,13 +3,13 @@ import React from "react";
 const RemoveFavourite = () => {
   return (
     <>
-      <span className="mr-2">Remove from Favourites</span>
+      <h6 className="mr-2">Remove from Favourites</h6>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="2em"
-        height="2em"
-        fill="currentColor"
+        width="1.5em"
+        height="1.5em"
+        fill="white"
         class="bi bi-x-square-fill"
         viewBox="0 0 16 16"
       >

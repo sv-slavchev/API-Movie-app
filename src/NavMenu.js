@@ -14,6 +14,10 @@ const NavMenu = () => (
         <li>
           <Link to="search">Search</Link>
         </li>
+        &nbsp;&nbsp;&nbsp;
+        <li>
+          <Link to="movies/movie-details">MovieDetails</Link>
+        </li>
       </ul>
     </nav>
   </header>
