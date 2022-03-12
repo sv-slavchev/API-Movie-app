@@ -1,19 +1,13 @@
-// import React from "react";
 import React, { useState, useEffect } from "react";
-import NavMenu from './NavMenu';
-import Main from './Main';
 import HeroSection from './HeroSection';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieList from "./components/MovieList";
-import MovieDetails from "./MovieDetails";
 import MovieListHeading from "./components/MovieListHeading";
-import SearchBox from "./components/SearchBox";
-import AddFavourites from "./components/AddFavourites";
 import RemoveFavourite from "./components/RemoveFavourites";
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = (movie) => {
   {/*const [movies, setMovies] = useState([]);*/ }
   const [favourites, setFavourites] = useState([]);
   {/*const [searchValue, setSearchValue] = useState('');*/ }
@@ -27,9 +21,9 @@ const Home = () => {
       if (responseJson.Search) {
         setMovies(responseJson.Search);
       }
-    };*/}
-
-  {/*useEffect(() => {
+    };
+    
+    useEffect(() => {
       getMovieRequest(searchValue);
     }, [searchValue]);*/}
 
@@ -65,28 +59,13 @@ const Home = () => {
       <div className="movie-app container-fluid">
         <HeroSection />
 
-        {/*<SearchBox
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-
-        <div className="movies row">
-          <div className="d-flex">
-            <MovieList
-              movies={movies}
-              handleFavouritesClick={AddFavouriteMovie}
-              favouriteComponent={AddFavourites}
-            />
-          </div>
-        </div>*/}
-
         <div className="row d-flex text-center align-items-center my-4">
           <MovieListHeading heading="Favourites" />
         </div>
 
-        <Link to="../movies/movie-details">
+        {/* <Link to="../movies/movie-details"> */}
+        <Link to={`movies/${movie.Title}`}>
           <div className="movies d-flex justify-content-center py-3">
-
             <MovieList
               movies={favourites}
               handleFavouritesClick={removeFavouriteMovie}

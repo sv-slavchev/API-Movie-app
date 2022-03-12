@@ -9,12 +9,12 @@ import MovieDetails from './MovieDetails';
 // and /schedule routes will match any pathname that starts
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
-const Main = () => (
+const Main = (movie) => (
   <main>
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/search" element={<Search/>} />
-      <Route path="/movies/movie-details" element={<MovieDetails/>} />
+      <Route path="/" element={<Home />} />
+      <Route path="/search" element={<Search />} />
+      <Route path={`/movies/${movie.Title}`} element={<MovieDetails />} />
     </Routes>
   </main>
 );

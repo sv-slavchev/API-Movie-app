@@ -25,22 +25,24 @@ const Header = () => {
 		getMovieRequest(searchValue);
 	}, [searchValue]);
 
-	return(
+	return (
 		<>
-			<div className="container-fluid d-flex align-items-center justify-content-between my-4">
-				<div>
-					<Link to='/'>
-						<MovieListHeading heading="Movies App" />
-					</Link>
+			<header>
+				<div className="container-fluid d-flex align-items-center justify-content-between my-4">
+					<div>
+						<Link to='/'>
+							<MovieListHeading heading="Movies App" />
+						</Link>
+					</div>
+
+					<div><NavMenu /></div>
+
+					<SearchBox
+						searchValue={searchValue}
+						setSearchValue={setSearchValue}
+					/>
 				</div>
-
-				<div><NavMenu /></div>
-
-				<SearchBox
-					searchValue={searchValue}
-					setSearchValue={setSearchValue}
-				/>
-			</div>
+			</header>
 		</>
 	);
 };

@@ -15,7 +15,7 @@ body a:hover {
   color: #9B5DE5;
 }
 
-.movie-app > .movies {
+.movies {
   overflow-x: auto;
   flex-wrap: nowrap;
 }

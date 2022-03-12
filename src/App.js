@@ -65,7 +65,7 @@ const App = () => {
         <Header />
 
         <Main />
-        
+
         <div className="movies row">
           <div className="d-flex">
             <MovieList

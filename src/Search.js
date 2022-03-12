@@ -1,17 +1,12 @@
-// import React from "react";
 import React, { useState, useEffect } from "react";
-import NavMenu from './NavMenu';
-import Main from './Main';
 import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MovieList from "./components/MovieList";
-import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import AddFavourites from "./components/AddFavourites";
-import RemoveFavourite from "./components/RemoveFavourites";
 
-const Home = () => {
+const Home = (movie) => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState('');
@@ -49,15 +44,6 @@ const Home = () => {
     saveToLocalStorage(newFavouriteList);
   };
 
-  const removeFavouriteMovie = (movie) => {
-    const newFavouriteList = favourites.filter(
-      (favourite) => favourite.imdbID !== movie.imdbID
-    );
-
-    setFavourites(newFavouriteList);
-    saveToLocalStorage(newFavouriteList);
-  };
-
   return (
     <>
       <div className="movie-app container-fluid">
@@ -66,14 +52,15 @@ const Home = () => {
           setSearchValue={setSearchValue}
         />
 
-        <Link to="../movies/movie-details">
-          <div className="movies container-fluid d-flex justify-content-center py-3">
-            
-              <MovieList
-                movies={movies}
-                handleFavouritesClick={AddFavouriteMovie}
-                favouriteComponent={AddFavourites}
-              />
+        {/* <Link to="../movies/movie-details"> */}
+        <Link to={`../movies/${movie.Title}`}>
+          <div className="movies d-flex justify-content-center py-3">
+
+            <MovieList
+              movies={movies}
+              handleFavouritesClick={AddFavouriteMovie}
+              favouriteComponent={AddFavourites}
+            />
           </div>
         </Link>
 
