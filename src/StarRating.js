@@ -29,7 +29,7 @@ const StarRating = () => {
           </>
         );
       })}
-      <p>Your rating is {rating}.</p>
+      <p>Your voting  is {rating}.</p>
     </div>
   );
 };

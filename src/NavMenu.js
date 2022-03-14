@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 const NavMenu = (movie) => (
   <header>
     <nav>
-      <ul className="d-flex align-items-center mt-3 list-unstyled">
+      <ul className="d-flex align-items-center list-unstyled">
         <li>
           <Link to="/">Home</Link>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-          <Link to="search">Search</Link>
+          <Link to="/search">Search</Link>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li>
-          <Link to={`movies/${movie.Title}`}>MovieDetails</Link>
+          <Link to={`/movies/${movie.Title}`}>MovieDetails</Link>
         </li>
       </ul>
     </nav>

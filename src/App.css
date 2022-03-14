@@ -15,42 +15,77 @@ body a:hover {
   color: #9B5DE5;
 }
 
-.movies {
-  overflow-x: auto;
-  flex-wrap: nowrap;
-}
-
-.image-container {
+.movie {
   position: relative;
   transition: tranform 0.2s;
 }
-.image-container img {
+
+.movie img {
   width: 200px;
   height: 270px;
 }
 
-.image-container:hover {
+.movie p,
+.movie a {
+  margin: 10px 0;
+}
+
+.movie p.description {
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.movie img:hover {
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.5s ease;
 }
 
-.image-container:hover .overlay {
+.movie:hover .overlay {
   opacity: 1;
 }
 
-.overlay {
+.movie .overlay {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  width: 100%;
+  width: 101%;
   transition: 0.5s ease;
   opacity: 0;
-  bottom: 0;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
+  left: 16px;
+  bottom: 6px;
+  font-size: 14px;
+  padding: 15px;
 }
+
+.fav-movies-list .btn-outline-danger {
+  position: absolute;
+  margin-left: -33px;
+  width: 200px;
+}
+
+.movies .btn-outline-success svg,
+.fav-movies-list .btn-outline-danger {
+  margin-left: 10px;
+}
+
+.movies .btn-outline-success:hover svg {
+  fill: red;
+}
+
+.fav-movies-list {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.fav-movies-list h2,
+.fav-movies-list p,
+.fav-movies-list a.official-link {
+  display: none;
+}
+
+
+
 
 
 
@@ -84,7 +119,7 @@ body a:hover {
 
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-  min-height: 350px;
+  min-height: 400px;
   background-image: url(https://www.penguin.co.uk/content/dam/prh/articles/adults/2021/september/2021_filmdaptations-main-image-1800x1200.jpg);
   /*background-image: url(https://www.prolifics.co.uk/wp-content/uploads/2021/11/ITManagedServices.jpg);*/
   /*background-image: url("https://cdn.vox-cdn.com/thumbor/ipkbn5z2BRNzJMBZ93UVo26pX78=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22414721/Streaming_Services_v3.jpg");*/
@@ -100,7 +135,7 @@ body a:hover {
 
   .clipped {
     clip-path: none;
-    max-height: 300px !important;
+    /* max-height: 300px !important; */
   }
 }
 
@@ -3757,9 +3792,6 @@ p#buttondownload {
 .detail #content .movie-info h1 span a {
   color: rgba(160, 160, 160, 0.77);
   font-weight: 500;
-}
-a {
-  color: #fff;
 }
 .detail #content .movie-info span#hd-icon {
   font-style: italic;

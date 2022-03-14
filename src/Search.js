@@ -46,23 +46,21 @@ const Home = (movie) => {
 
   return (
     <>
-      <div className="movie-app container-fluid">
-        <SearchBox
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+      <div className="container">
+        <div className="container col-md-5 col-offset-4">
+          <SearchBox
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </div>
 
-        {/* <Link to="../movies/movie-details"> */}
-        <Link to={`../movies/${movie.Title}`}>
-          <div className="movies d-flex justify-content-center py-3">
-
-            <MovieList
-              movies={movies}
-              handleFavouritesClick={AddFavouriteMovie}
-              favouriteComponent={AddFavourites}
-            />
-          </div>
-        </Link>
+        <div className="movies py-3">
+          <MovieList
+            movies={movies}
+            handleFavouritesClick={AddFavouriteMovie}
+            favouriteComponent={AddFavourites}
+          />
+        </div>
 
         {/*<div className="row d-flex align-items-center my-4">
           <MovieListHeading heading="Favourites" />

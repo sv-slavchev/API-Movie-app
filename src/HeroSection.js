@@ -11,7 +11,7 @@ const HeroSection = () => (
       <Link to="search">Search</Link>
     </div>
 
-    <div class="col-md-8 h-100 clipped"></div>
+    <div class="clipped col-md-8 h-100"></div>
   </div>
 );
 

@@ -56,23 +56,22 @@ const Home = (movie) => {
 
   return (
     <>
-      <div className="movie-app container-fluid">
+      <div className="movie-app">
         <HeroSection />
 
-        <div className="row d-flex text-center align-items-center my-4">
+        <div className="row d-flex text-center align-items-center my-3">
           <MovieListHeading heading="Favourites" />
         </div>
 
-        {/* <Link to="../movies/movie-details"> */}
-        <Link to={`movies/${movie.Title}`}>
-          <div className="movies d-flex justify-content-center py-3">
-            <MovieList
-              movies={favourites}
-              handleFavouritesClick={removeFavouriteMovie}
-              favouriteComponent={RemoveFavourite}
-            />
-          </div>
-        </Link>
+        {/* <Link to={`/movies/${movie.Title}`}> */}
+        <div className="fav-movies-list d-flex justify-content-center py-3">
+          <MovieList
+            movies={favourites}
+            handleFavouritesClick={removeFavouriteMovie}
+            favouriteComponent={RemoveFavourite}
+          />
+        </div>
+        {/* </Link> */}
       </div>
     </>
   );
