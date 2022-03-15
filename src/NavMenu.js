@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // The NavMenu creates links that can be used to navigate
 // between routes.
 const NavMenu = (movie) => (
-  <header>
     <nav>
       <ul className="d-flex align-items-center list-unstyled">
         <li>
@@ -20,7 +19,6 @@ const NavMenu = (movie) => (
         </li>
       </ul>
     </nav>
-  </header>
 );
 
 export default NavMenu;

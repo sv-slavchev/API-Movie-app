@@ -40,18 +40,28 @@ const MovieList = (props, movie) => {
   return (
     <>
       {props.movies.map((movie, index) => (
-        <div className="movie d-md-flex justify-content-center m-3">
-          <div className="movie-list-img col-md-2">
-            <Link to={`../movies/${movie.Title}`}>
-              <img src={movie.Poster} alt="Movie"></img>
+        <div className="movie d-lg-flex m-4">
+          <div className="movie-list-img">
+            <Link to={`/movies/${movie.Title}`}>
+              <img src={movie.Poster} alt={movie.Title}></img>
             </Link>
           </div>
 
+          <div className="movie-list-info">
+            <h2>
+                <span className="text-success">Title: </span>
+                <Link to={`/movies/${movie.Title}`}>
+                    {movie.Title} ({movie.Year})
+                </Link>
+            </h2>
 
-          <div className="movie-list-info col-md-8">
-            <h2>{movie.Title} ({movie.Year})</h2>
-            <p>{movie.Type}</p>
+
+            <p><span className="text-success">Type:</span> {movie.Type}</p>
+
+            <span className="text-success">Description:</span>
             <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+            <span className="text-success">Official website: </span>
             <Link to={`/movies/${movie.Title}`} className="official-link">www.lorem-ipsum.com</Link>
 
             <div onClick={() => props.handleFavouritesClick(movie)} >

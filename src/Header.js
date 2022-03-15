@@ -27,22 +27,23 @@ const Header = () => {
 
 	return (
 		<>
-			<header>
-				<div className="container d-md-flex align-items-center justify-content-between my-4">
-					<div className="col-md-4">
-						<Link to='/'>
-							<MovieListHeading heading="Movies App" />
-						</Link>
-					</div>
+			<header className="d-md-flex align-items-center justify-content-between my-4">
+				<div className="col-md-4">
+					<Link to='/'>
+						<MovieListHeading heading="Movies App" />
+					</Link>
+				</div>
 
-					<div className="col-md-4"><NavMenu /></div>
+				<div className="col-md-4 d-flex justify-content-center mx-5 mx-lg-0 mt-2 mb-4 mt-lg-0 mb-lg-0">
+					<NavMenu />
+				</div>
 
-					<div className="col-md-2 mt-3 mt-md-0">
-						<SearchBox
-							searchValue={searchValue}
-							setSearchValue={setSearchValue}
-						/>
-					</div>
+				<div className="col-md-2 offset-md-2">
+					<SearchBox
+						searchValue={searchValue}
+						setSearchValue={setSearchValue}
+						className="mt-3 mt-md-0"
+					/>
 				</div>
 			</header>
 		</>

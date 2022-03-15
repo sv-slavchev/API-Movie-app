@@ -47,14 +47,15 @@ const Home = (movie) => {
   return (
     <>
       <div className="container">
-        <div className="container col-md-5 col-offset-4">
+        <div className="col-md-6 offset-md-3">
+            <h1 className="text-center">Search</h1>
           <SearchBox
             searchValue={searchValue}
             setSearchValue={setSearchValue}
           />
         </div>
 
-        <div className="movies py-3">
+        <div className="movies py-4">
           <MovieList
             movies={movies}
             handleFavouritesClick={AddFavouriteMovie}

@@ -18,6 +18,7 @@ body a:hover {
 .movie {
   position: relative;
   transition: tranform 0.2s;
+  max-height: 270px;
 }
 
 .movie img {
@@ -30,15 +31,42 @@ body a:hover {
   margin: 10px 0;
 }
 
+.movie-list-info {
+    margin-left: 30px;
+}
+
 .movie p.description {
   max-height: 120px;
   overflow: hidden;
 }
 
-.movie img:hover {
+.fav-movies-list {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.fav-movies-list h2,
+.fav-movies-list p,
+.fav-movies-list a.official-link,
+.fav-movies-list span {
+  display: none;
+}
+
+.fav-movies-list .movie:hover img,
+.movie:hover a img {
   cursor: pointer;
-  transform: scale(1.1);
-  transition: 0.5s ease;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.fav-movies-list .movie:hover {
+    background-color: transparent;
 }
 
 .movie:hover .overlay {
@@ -49,40 +77,36 @@ body a:hover {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  width: 101%;
+  width: 202px;
   transition: 0.5s ease;
   opacity: 0;
-  left: 16px;
-  bottom: 6px;
-  font-size: 14px;
-  padding: 15px;
+  left: -1px;
+  bottom: -1px;
 }
 
-.fav-movies-list .btn-outline-danger {
-  position: absolute;
-  margin-left: -33px;
-  width: 200px;
+.movies .btn-outline-success {
+    margin-top: 15px;
 }
 
-.movies .btn-outline-success svg,
-.fav-movies-list .btn-outline-danger {
+.movies .btn-outline-success svg {
   margin-left: 10px;
+}
+
+.fav-movies-list .btn svg {
+    margin: auto;
 }
 
 .movies .btn-outline-success:hover svg {
   fill: red;
 }
 
-.fav-movies-list {
-  overflow-x: auto;
-  flex-wrap: nowrap;
+@media screen and (max-width: 992px) {
+    .movie-list-info {
+        margin-left: 0;
+    }
 }
 
-.fav-movies-list h2,
-.fav-movies-list p,
-.fav-movies-list a.official-link {
-  display: none;
-}
+
 
 
 

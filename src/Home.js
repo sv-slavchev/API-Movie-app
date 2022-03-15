@@ -14,15 +14,15 @@ const Home = (movie) => {
 
   {/*const getMovieRequest = async (searchValue) => {
       const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=d3974e11`;
-  
+
       const response = await fetch(url);
       const responseJson = await response.json();
-  
+
       if (responseJson.Search) {
         setMovies(responseJson.Search);
       }
     };
-    
+
     useEffect(() => {
       getMovieRequest(searchValue);
     }, [searchValue]);*/}
@@ -56,15 +56,15 @@ const Home = (movie) => {
 
   return (
     <>
-      <div className="movie-app">
+      {/* <div className="movie-app"> */}
         <HeroSection />
 
-        <div className="row d-flex text-center align-items-center my-3">
-          <MovieListHeading heading="Favourites" />
+        <div className="text-center my-3">
+          <MovieListHeading heading="Your Favorites" />
         </div>
 
         {/* <Link to={`/movies/${movie.Title}`}> */}
-        <div className="fav-movies-list d-flex justify-content-center py-3">
+        <div className="fav-movies-list d-flex justify-content-center py-2">
           <MovieList
             movies={favourites}
             handleFavouritesClick={removeFavouriteMovie}
@@ -72,7 +72,7 @@ const Home = (movie) => {
           />
         </div>
         {/* </Link> */}
-      </div>
+      {/* </div> */}
     </>
   );
 };
