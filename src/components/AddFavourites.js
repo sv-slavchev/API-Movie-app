@@ -2,11 +2,18 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddFavourites = () => {
+  const addFavouriteMovie = event => {
+    event.preventDefault();
+    alert('The movie was been added to Favorites!');
+  }
+
+
   return (
     <>
       <button
         type="button"
-        className="btn btn-outline-success d-flex"
+        className="btn btn-outline-success"
+        onClick={addFavouriteMovie}
       >
         Add to Favourites
 

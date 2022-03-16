@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
-import NavMenu from "./NavMenu";
-import MovieListHeading from "./components/MovieListHeading";
-import SearchBox from "./components/SearchBox";
-import Home from './Home';
 import { Link } from 'react-router-dom';
-
+import SearchBox from "../Search-page/SearchBox";
 
 const Header = () => {
 	const [movies, setMovies] = useState([]);
@@ -27,23 +23,21 @@ const Header = () => {
 
 	return (
 		<>
-			<header className="d-md-flex align-items-center justify-content-between my-4">
-				<div className="col-md-4">
+			<header className="d-md-flex justify-content-between my-4">
+				<div>
 					<Link to='/'>
-						<MovieListHeading heading="Movies App" />
+						<h1>Movies App</h1>
 					</Link>
 				</div>
 
-				<div className="col-md-4 d-flex justify-content-center mx-5 mx-lg-0 mt-2 mb-4 mt-lg-0 mb-lg-0">
-					<NavMenu />
-				</div>
-
-				<div className="col-md-2 offset-md-2">
-					<SearchBox
-						searchValue={searchValue}
-						setSearchValue={setSearchValue}
-						className="mt-3 mt-md-0"
-					/>
+				<div>
+					<Link to='/search'>
+						<SearchBox
+							searchValue={searchValue}
+							setSearchValue={setSearchValue}
+							className="mt-3 mt-md-0"
+						/>
+					</Link>
 				</div>
 			</header>
 		</>

@@ -2,11 +2,17 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const RemoveFavourite = () => {
+  const removeFavouriteMovie = event => {
+    event.preventDefault();
+    alert('The movie was removed from Favorites!');
+  }
+
   return (
     <>
       <button
         type="button"
         class="btn overlay d-flex"
+        onClick={removeFavouriteMovie}
       >
         Remove from Favourites
 

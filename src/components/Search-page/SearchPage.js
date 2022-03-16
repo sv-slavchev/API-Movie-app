@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import MovieList from "./components/MovieList";
-import SearchBox from "./components/SearchBox";
-import AddFavourites from "./components/AddFavourites";
+import "../../App.css";
+import MovieList from "../MovieList";
+import AddFavourites from "../AddFavourites";
+import SearchBox from "./SearchBox";
 
 const Home = (movie) => {
   const [movies, setMovies] = useState([]);
@@ -48,34 +47,21 @@ const Home = (movie) => {
     <>
       <div className="container">
         <div className="col-md-6 offset-md-3">
-            <h1 className="text-center">Search</h1>
+          <h1 className="text-center">Search</h1>
+
           <SearchBox
             searchValue={searchValue}
             setSearchValue={setSearchValue}
           />
         </div>
 
-        <div className="movies py-4">
+        <div className="search movies py-4">
           <MovieList
             movies={movies}
             handleFavouritesClick={AddFavouriteMovie}
             favouriteComponent={AddFavourites}
           />
         </div>
-
-        {/*<div className="row d-flex align-items-center my-4">
-          <MovieListHeading heading="Favourites" />
-        </div>
-
-        <div className="movies row">
-          <div className="d-flex">
-            <MovieList
-              movies={favourites}
-              handleFavouritesClick={removeFavouriteMovie}
-              favouriteComponent={RemoveFavourite}
-            />
-          </div>
-        </div>*/}
       </div>
     </>
   );
